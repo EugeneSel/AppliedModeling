@@ -18,6 +18,7 @@ def load_data():
         data_total = r_total.json()
 
         df_total = pd.DataFrame(data_total)
+        df_total.to_csv("data/total_cases.csv")
     else:
         print(r_total.reason)
         df_total = None
@@ -27,9 +28,12 @@ def load_data():
         data_daily_cases = r_daily_cases.json()
 
         df_daily_cases = pd.DataFrame(data_daily_cases)
+        df_total.to_csv("data/daily_cases.csv")
     else:
         print(r_total.reason)
         df_daily_cases = None
+
+
 
     return df_total, df_daily_cases
 
