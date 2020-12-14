@@ -28,12 +28,10 @@ def load_data():
         data_daily_cases = r_daily_cases.json()
 
         df_daily_cases = pd.DataFrame(data_daily_cases)
-        df_total.to_csv("data/daily_cases.csv")
+        df_daily_cases.to_csv("data/daily_cases.csv")
     else:
-        print(r_total.reason)
+        print(r_daily_cases.reason)
         df_daily_cases = None
-
-
 
     return df_total, df_daily_cases
 
